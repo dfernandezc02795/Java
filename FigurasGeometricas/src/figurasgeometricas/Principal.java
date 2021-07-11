@@ -12,7 +12,12 @@ import java.util.Scanner;
  * @author DANIELA
  */
 public class Principal {
-    
+    /**
+     * Metodo que devuelve una excepcion en caso de que se ingrese un numero menor o igual que 0 
+     * @param valor
+     * @return
+     * @throws ExcepcionNumeroNegativo 
+     */
     public double numeroNegativo(double valor) throws ExcepcionNumeroNegativo{
         if (valor > 0){
             return valor;
@@ -20,7 +25,15 @@ public class Principal {
             throw  new ExcepcionNumeroNegativo("Número menor o igual a cero no permitido");
         }
     }
-    
+    /**
+     * Metodo que devuelve una excepcion en caso de que se ingrese un numero menor o igual que 0
+     * para que triangulo
+     * @param valor1
+     * @param valor2
+     * @param valor3
+     * @return
+     * @throws ExcepcionNumeroNegativo 
+     */
     public double[] numeroNegativoTriangulo(double valor1, double valor2, double valor3) throws ExcepcionNumeroNegativo{
         if (valor1 > 0 && valor2 > 0 && valor3 > 0){
             return new double[]{valor1,valor2,valor3};

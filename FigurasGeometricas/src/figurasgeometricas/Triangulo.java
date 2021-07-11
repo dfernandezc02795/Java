@@ -21,20 +21,28 @@ public class Triangulo extends Figura {
         this.lado2 = lado2;
         this.lado3 = lado3;
     }
-    //Metodo que permite calcular el perimetro del Triangulo    
+    /**
+     * Metodo que retorna el perimetro del triangulo
+     * @return perimetro
+     */  
     @Override
     public double perimetro(){
         perimetro = lado1 + lado2 + lado3;
         return perimetro;
     }
-    
+    /**
+     * Metodo que retorna el area del cuadrado
+     * @return area
+     */
     @Override
     public double area() {
         double sp = perimetro/2;
         area = Math.sqrt((sp*(sp-lado1)*(sp-lado2)*(sp-lado3)));
         return area;
     }
-
+    /**
+     * Metodo que imprime los datos de triangulo
+     */
     @Override
     public void imprimir() {
         perimetro();

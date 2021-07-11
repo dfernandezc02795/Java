@@ -19,19 +19,27 @@ public class Circulo extends Figura {
     public Circulo(double radio) {
         this.radio = radio;
     }
-
+    /**
+     * Metodo que calcula el perimetro del circulo
+     * @return perimetro
+     */
     @Override
     public double perimetro() {
         perimetro = 2 * radio * PI;
         return perimetro;
     }
-
+    /**
+     * Metodo que calcula el area del circulo
+     * @return area
+     */
     @Override
     public double area() {
         area = PI * Math.pow(radio, 2);
         return area;
     }
-
+    /**
+     * Metodo que imprime los datos del circulo
+     */
     @Override
     public void imprimir() {
         area();
