@@ -6,6 +6,7 @@
 package FigurasGeometricas;
 
 import figurasgeometricas.Circulo;
+import java.text.DecimalFormat;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -21,6 +22,7 @@ import static org.junit.Assert.*;
 public class CirculoTest {
     
     Circulo c;
+    DecimalFormat df = new DecimalFormat("###.##");
     
     public CirculoTest() {
     }
@@ -48,10 +50,11 @@ public class CirculoTest {
      */    
      @Test
     public void testPerimetro() {
-        //System.out.println("perimetro");
         double expResult = 12.56636;
+        
         double result = c.perimetro();
-        assertEquals(expResult, result, 0.0);
+        
+        assertEquals(df.format(expResult), df.format(result));
     }
 
     /**
@@ -59,10 +62,11 @@ public class CirculoTest {
      */
     @Test
     public void testArea() {
-        //System.out.println("area");
         double expResult = 12.56636;
+        
         double result = c.area();
-        assertEquals(expResult, result, 0.0);
+        
+        assertEquals(df.format(expResult), df.format(result));
     }
 
     /**
@@ -70,9 +74,7 @@ public class CirculoTest {
      */
     @Test
     public void testImprimir() {
-        //System.out.println("imprimir");
         c.imprimir();
-       // Mockito.verify(instance, times(1));
     }
     
 }

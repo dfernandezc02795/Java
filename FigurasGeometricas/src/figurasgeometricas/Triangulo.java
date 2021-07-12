@@ -13,7 +13,7 @@ import java.text.DecimalFormat;
  */
 public class Triangulo extends Figura {
     
-    double lado1, lado2, lado3;
+    double lado1, lado2, lado3, sp;
     DecimalFormat df = new DecimalFormat("###.##");
     
     public Triangulo(double lado1, double lado2, double lado3) {
@@ -36,7 +36,7 @@ public class Triangulo extends Figura {
      */
     @Override
     public double area() {
-        double sp = perimetro/2;
+        sp = (lado1 + lado2 + lado3)/2;
         area = Math.sqrt((sp*(sp-lado1)*(sp-lado2)*(sp-lado3)));
         return area;
     }

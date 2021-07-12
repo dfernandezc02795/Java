@@ -6,6 +6,7 @@
 package FigurasGeometricas;
 
 import figurasgeometricas.Triangulo;
+import java.text.DecimalFormat;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,6 +19,10 @@ import static org.junit.Assert.*;
  * @author DANIELA
  */
 public class TrianguloTest {
+    
+    Triangulo t;
+    double lado1, lado2, lado3;
+    DecimalFormat df = new DecimalFormat("###.##");;
     
     public TrianguloTest() {
     }
@@ -32,6 +37,10 @@ public class TrianguloTest {
     
     @Before
     public void setUp() {
+        lado1 = 2.0; 
+        lado2 = 3.0;
+        lado3 = 4.0;
+        t = new Triangulo(lado1,lado2,lado3);
     }
     
     @After
@@ -43,14 +52,11 @@ public class TrianguloTest {
      */
     @Test
     public void testPerimetro() {
-        //System.out.println("perimetro");
-        double lado1 = 2.0, lado2 = 3.0, lado3 = 4.0;
-        Triangulo instance = new Triangulo(lado1,lado2,lado3);
-        double expResult = 24.0;
-        double result = instance.perimetro();
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        double expResult = 9;
+        
+        double result = t.perimetro();
+        
+        assertEquals(df.format(expResult), df.format(result));
     }
 
     /**
@@ -58,14 +64,11 @@ public class TrianguloTest {
      */
     @Test
     public void testArea() {
-        //System.out.println("area");
-        double lado1 = 2, lado2 = 3, lado3 = 4;
-        Triangulo instance = new Triangulo(lado1,lado2,lado3);
-        double expResult = 0.0;
-        double result = instance.area();
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        double expResult = 2.9047375096555625;
+        
+        double result = t.area();
+        
+        assertEquals(df.format(expResult), df.format(result));
     }
 
     /**
@@ -73,12 +76,7 @@ public class TrianguloTest {
      */
     @Test
     public void testImprimir() {
-        //System.out.println("imprimir");
-        double lado1 = 2, lado2 = 3, lado3 = 4 ;
-        Triangulo instance = new Triangulo(lado1,lado2,lado3);
-        instance.imprimir();
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        t.imprimir();
     }
     
 }

@@ -22,25 +22,16 @@ public class Principal {
         if (valor > 0){
             return valor;
         }else{
-            throw  new ExcepcionNumeroNegativo("Número menor o igual a cero no permitido");
-        }
-    }
-    /**
-     * Metodo que devuelve una excepcion en caso de que se ingrese un numero menor o igual que 0
-     * para que triangulo
-     * @param valor1
-     * @param valor2
-     * @param valor3
-     * @return
-     * @throws ExcepcionNumeroNegativo 
-     */
-    public double[] numeroNegativoTriangulo(double valor1, double valor2, double valor3) throws ExcepcionNumeroNegativo{
-        if (valor1 > 0 && valor2 > 0 && valor3 > 0){
-            return new double[]{valor1,valor2,valor3};
-        }else{
             throw new ExcepcionNumeroNegativo("Número menor o igual a cero no permitido");
         }
     }
+//    public double[] numeroNegativoTriangulo(double valor1, double valor2, double valor3) throws ExcepcionNumeroNegativo{
+//        if (valor1 > 0 && valor2 > 0 && valor3 > 0){
+//            return new double[]{valor1,valor2,valor3};
+//        }else{
+//            throw new ExcepcionNumeroNegativo("Número menor o igual a cero no permitido");
+//        }
+//    }
     
     /**
      * @param args the command line arguments
@@ -81,7 +72,9 @@ public class Principal {
                     System.out.print("Ingrese el valor del lado3 ");
                     double lado3 = sn.nextDouble();
                     try {
-                        p.numeroNegativoTriangulo(lado1,lado2,lado3);
+                        p.numeroNegativo(lado1);
+                        p.numeroNegativo(lado2);
+                        p.numeroNegativo(lado3);
                         f = new Triangulo(lado1, lado2, lado3);
                         impF.imprimir(f);
                     } catch (ExcepcionNumeroNegativo ex) {

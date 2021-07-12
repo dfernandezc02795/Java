@@ -16,10 +16,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-
 /**
  *
  * @author DANIELA
@@ -63,21 +59,21 @@ public class ImpresoraFigurasTest {
     @Test
     public void testImprimirCirculo() {
         System.out.println("imprimir Circulo");
+        
         impFig.imprimir(fCirculo);
-        
-        
     }
     
      @Test
     public void testImprimirCuadrado() {
         System.out.println("imprimir Cuadrado");
+        
         impFig.imprimir(fCuadrado);
-        //verify(fCuadrado,times(1)).imprimir();
     }
     
      @Test
     public void testImprimirTriangulo() {
         System.out.println("imprimir Triangulo");
+        
         impFig.imprimir(fTriangulo);
         //verify(fTriangulo,times(1)).imprimir();
         

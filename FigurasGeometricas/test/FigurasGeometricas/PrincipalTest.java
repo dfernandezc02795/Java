@@ -10,7 +10,9 @@ import figurasgeometricas.Figura;
 import figurasgeometricas.ImpresoraFiguras;
 import figurasgeometricas.Circulo;
 import figurasgeometricas.Cuadrado;
+import figurasgeometricas.ExcepcionNumeroNegativo;
 import figurasgeometricas.Triangulo;
+import java.text.DecimalFormat;
 import java.util.InputMismatchException;
 import static org.hamcrest.core.Is.is;
 import org.junit.After;
@@ -31,6 +33,7 @@ public class PrincipalTest {
     ImpresoraFiguras impF;
     Figura fCirculo, fCuadrado, fTriangulo;
     Principal p;
+    DecimalFormat df;
     
     public PrincipalTest() {
     }
@@ -46,9 +49,10 @@ public class PrincipalTest {
     @Before
     public void setUp() {
         
-        opcion = 3;
+        opcion = 2;
         
         impF = new ImpresoraFiguras();
+        df = new DecimalFormat("###.##");
         p = new Principal();
         
         radio = -2.0;
@@ -57,9 +61,9 @@ public class PrincipalTest {
         ancho = -3.0;
         fCuadrado = new Cuadrado(ancho);
       
-        lado1= 2;
-        lado2= -2;
-        lado3= 2;
+        lado1= 2.0;
+        lado2= 2.0;
+        lado3= 2.0;
         fTriangulo = new Triangulo(lado1, lado2, lado3);
         
         
@@ -67,6 +71,26 @@ public class PrincipalTest {
     
     @After
     public void tearDown() {
+    }
+    
+    @Test
+    public void testnumeroNegativo() throws ExcepcionNumeroNegativo{
+        double valor = 2.0;
+        double resultado = p.numeroNegativo(valor);
+        assertEquals(df.format(valor), df.format(resultado));
+    }
+    
+      @Test()
+    public void testNumeroNegativoException() throws ExcepcionNumeroNegativo {
+        double valor = -2.0;
+        
+        Exception exception = assertThrows(ExcepcionNumeroNegativo.class, () -> {
+            double result = p.numeroNegativo(valor);
+        });
+
+        String expectedMessage = "Número menor o igual a cero no permitido";
+        String actualMessage = exception.getMessage();
+        assertTrue(actualMessage.contains(expectedMessage));
     }
     
     /**
